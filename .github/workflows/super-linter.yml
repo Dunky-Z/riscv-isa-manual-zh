@@ -8,9 +8,9 @@ name: Lint Code Base
 
 on:
   push:
-    branches: [ "hexo" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "hexo" ]
+    branches: [ "main" ]
 jobs:
   run-lint:
     runs-on: ubuntu-latest
