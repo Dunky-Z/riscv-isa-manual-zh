@@ -10,6 +10,7 @@ jobs:
       - name: create file list
         id: files_list
         run: |
+          apt-get install texlive-latex-extra
           mkdir output  # create output dir
       - uses: docker://pandoc/latex:2.9
         with:
