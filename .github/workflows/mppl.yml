@@ -10,14 +10,11 @@ jobs:
       - name: create file list
         id: files_list
         run: |
-          echo "Lorem ipsum" > lorem_1.md  # create two example files
-          echo "dolor sit amet" > lorem_2.md
           mkdir output  # create output dir
-          # this will also include README.md
-          echo "::set-output name=files::$(printf '"%s" ' *.md)"
+          cd src
       - uses: docker://pandoc/latex:2.9
         with:
-          args: --output=output/result.pdf ${{ steps.files_list.outputs.files }}
+          args: -f  markdown-auto_identifiers  --listings --pdf-engine=xelatex --template=../templates/mppl.tex  --output=../output/RISC-V指令集手册-中文.pdf *.md
       - uses: actions/upload-artifact@master
         with:
           name: output
