@@ -11,10 +11,9 @@ jobs:
         id: files_list
         run: |
           mkdir output  # create output dir
-          cd src
       - uses: docker://pandoc/latex:2.9
         with:
-          args: -f  markdown-auto_identifiers  --listings --pdf-engine=xelatex --template=../templates/mppl.tex  --output=../output/RISC-V指令集手册-中文.pdf *.md
+          args: -f  markdown-auto_identifiers  --listings --pdf-engine=xelatex --template=./templates/mppl.tex  --output=./output/RISC-V指令集手册-中文.pdf *.md
       - uses: actions/upload-artifact@master
         with:
           name: output
