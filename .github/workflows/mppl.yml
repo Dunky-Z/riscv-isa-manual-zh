@@ -11,6 +11,8 @@ jobs:
         id: files_list
         run: |
           sudo apt-get install texlive-latex-extra
+          sudo tlmgr update --self
+          sudo tlmgr install framed
           mkdir output  # create output dir
       - uses: docker://pandoc/latex:2.9
         with:
