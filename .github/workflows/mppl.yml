@@ -11,8 +11,8 @@ jobs:
         id: files_list
         run: |
           # sudo apt-get update
-          sudo apt-get install texlive-base
-          # sudo apt-get install texlive-xetex
+          sudo apt-get install texlive-latex-base
+          sudo apt-get install latex-cjk-chinese
           sudo apt-get install xzdec
           tlmgr init-usertree
           tlmgr install framed
