@@ -10,11 +10,13 @@ jobs:
       - name: create file list
         id: files_list
         run: |
-          sudo apt-get update
-          sudo apt-get install texlive-full
-          sudo apt-get install texlive-xetex
+          # sudo apt-get update
+          # sudo apt-get install texlive-full
+          # sudo apt-get install texlive-xetex
           sudo apt-get install xzdec
+          tlmgr init-usertree
           tlmgr install framed
+          tlmgr install titling
           apt-get clean
           rm -rf /var/lib/apt/lists/*
           mkdir output  # create output dir
