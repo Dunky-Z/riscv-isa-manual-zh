@@ -10,17 +10,19 @@ jobs:
       - name: create file list
         id: files_list
         run: |
+          mkdir output  # create output dir
+      - uses: docker://pandoc/latex:2.9
+        run: |
           # sudo apt-get update
-          sudo apt-get install texlive
+          # sudo apt-get install texlive
           # sudo apt-get install texlive-xetex
           sudo apt-get install xzdec
+          tlmgr update --self
           tlmgr init-usertree
           tlmgr install framed
           tlmgr install titling
           apt-get clean
           rm -rf /var/lib/apt/lists/*
-          mkdir output  # create output dir
-      - uses: docker://pandoc/latex:2.9
         with:
           args: -f  markdown-auto_identifiers  --listings --pdf-engine=xelatex --template=/github/workspace/templates/mppl.tex  --output=./output/RISC-V指令集手册-中文.pdf /github/workspace/src/Chapter1-Introduction.md
       - uses: actions/upload-artifact@master
