@@ -13,11 +13,11 @@ jobs:
           # sudo apt-get update
           # sudo apt-get install texlive-latex-base
           # sudo apt-get install latex-cjk-chinese
-          # sudo apt-get install xzdec
           # sudo tlmgr init-usertree
           # sudo tlmgr install framed
           # sudo tlmgr install titling
           sudo apt-get install --reinstall texlive-base
+          sudo apt-get install xzdec
           tlmgr init-usertree
 
           tlmgr install luainputenc
