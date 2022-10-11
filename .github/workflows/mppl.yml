@@ -16,10 +16,9 @@ jobs:
           # sudo tlmgr init-usertree
           # sudo tlmgr install framed
           # sudo tlmgr install titling
-          sudo apt-get install --reinstall texlive-base
+          sudo apt-get install texlive-latex-recommended
           sudo apt-get install xzdec
           tlmgr init-usertree
-
           tlmgr install luainputenc
           sudo apt-get clean
           rm -rf /var/lib/apt/lists/*
