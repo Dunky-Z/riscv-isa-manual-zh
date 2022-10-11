@@ -14,8 +14,8 @@ jobs:
           sudo apt-get install texlive
           # sudo apt-get install texlive-xetex
           sudo apt-get install xzdec
-          tlmgr update --self
           tlmgr init-usertree
+          tlmgr update --self
           tlmgr install framed
           tlmgr install titling
           apt-get clean
