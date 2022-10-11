@@ -12,6 +12,8 @@ jobs:
         run: |
           mkdir output  # create output dir
       - uses: docker://pandoc/latex:2.9
+      - name: install pre
+
         run: |
           # sudo apt-get update
           # sudo apt-get install texlive
