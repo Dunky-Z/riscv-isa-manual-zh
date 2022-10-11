@@ -11,7 +11,7 @@ jobs:
         id: files_list
         run: |
           # sudo apt-get update
-          # sudo apt-get install texlive-full
+          sudo apt-get install texlive
           # sudo apt-get install texlive-xetex
           sudo apt-get install xzdec
           tlmgr init-usertree
