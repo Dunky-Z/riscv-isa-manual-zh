@@ -10,9 +10,8 @@ jobs:
       - name: create file list
         id: files_list
         run: |
-          sudo apt-get install texlive-latex-extra
-          sudo tlmgr update --self
-          sudo tlmgr install framed
+          sudo apt-get install texlive-full
+          sudo apt-get install texlive-xetex
           mkdir output  # create output dir
       - uses: docker://pandoc/latex:2.9
         with:
