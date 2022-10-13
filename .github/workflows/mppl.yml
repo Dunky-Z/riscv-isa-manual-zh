@@ -21,24 +21,24 @@ jobs:
           mkfontscale
           mkfontdir
           fc-cache
-          fc-list :lang=zh        
-      # - name: install pandoc
-      #   run: |
-      #     sudo apt-get update
-      #     sudo apt-get install texlive-full
-      #     sudo apt-get install pandoc
-      #     # cabal update
-      #     # cabal install pandoc
-      #     # sudo apt-get install latex-cjk-chinese
-      #     # sudo apt-get install xzdec
-      #     # sudo tlmgr init-usertree
-      #     # sudo tlmgr install framed
-      #     # sudo tlmgr install titling
-      #     sudo apt-get clean
-      # - name: build pdf
-      #   run: |
-      #     pandoc -f  markdown-auto_identifiers  --listings --latex-engine=xelatex --template=./templates/mppl.tex  --output=./output/RISC-V指令集手册-中文.pdf ./src/*.md
-      # - uses: actions/upload-artifact@master
-      #   with:
-      #     name: output
-      #     path: output
+          fc-list
+      - name: install pandoc
+        run: |
+          sudo apt-get update
+          sudo apt-get install texlive-full
+          sudo apt-get install pandoc
+          # cabal update
+          # cabal install pandoc
+          # sudo apt-get install latex-cjk-chinese
+          # sudo apt-get install xzdec
+          # sudo tlmgr init-usertree
+          # sudo tlmgr install framed
+          # sudo tlmgr install titling
+          sudo apt-get clean
+      - name: build pdf
+        run: |
+          pandoc -f  markdown-auto_identifiers  --listings --latex-engine=xelatex --template=./templates/mppl.tex  --output=./output/RISC-V指令集手册-中文.pdf ./src/*.md
+      - uses: actions/upload-artifact@master
+        with:
+          name: output
+          path: output

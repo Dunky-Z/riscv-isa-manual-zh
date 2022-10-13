@@ -5,7 +5,7 @@ version: "Vsersion: 20211203"
 date: "2022-10"
 company: RISC-V
 logo: true
-logo-url: ../pic/logo.png
+logo-url: ./pic/logo.png
 lot: false
 lof: true
 header-right: RISC-V
