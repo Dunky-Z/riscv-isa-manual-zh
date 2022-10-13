@@ -11,7 +11,17 @@ jobs:
         id: files_list
         run: |
           mkdir output  # create output dir
-          fc-list
+      - name: add fonts
+        run: |
+          sudo apt-get install ttf-mscorefonts-installer
+          sudo apt-get install fontconfig
+          fc-list :lang=zh
+          ls -lh /usr/share/fonts/
+          cp -rf ./fonts/* /usr/share/fonts/
+          mkfontscale
+          mkfontdir
+          fc-cache
+          fc-list :lang=zh        
       # - name: install pandoc
       #   run: |
       #     sudo apt-get update
