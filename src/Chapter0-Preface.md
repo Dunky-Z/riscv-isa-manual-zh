@@ -1,11 +1,11 @@
 ---
 title: "The RISC-V Instruction Set Manual"
-subtitle: "RISC-V指令集手册中文版"
+subtitle: "RISC-V 指令集手册中文版"
 version: "Vsersion: 20211203"
 date: "2022-10"
 company: RISC-V
 logo: true
-logo-url: ./pic/logo.png
+logo-url: ../pic/logo.png
 lot: false
 lof: true
 header-right: RISC-V
