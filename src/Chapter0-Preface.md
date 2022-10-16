@@ -8,6 +8,7 @@ logo: true
 logo-url: ../pic/logo.png
 lot: false
 lof: true
+mainfont: Lato
 header-right: RISC-V
 department: RISC-V
 history:
