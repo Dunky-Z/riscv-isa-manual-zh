@@ -13,7 +13,7 @@ delegation register, mideleg）为 MXLEN 位读写寄存器。
 
 当 Trap 委托给 S 模式时，将 Trap 原因写入 `scause` 寄存器；`sepc` 寄存器写入捕获 Trap 的指令的虚拟地址；`stval` 寄存器写入异常特定数据；`mstatus` 的 `SPP` 字段写入 trap 时的 active 特权模式；`mstatus` 的 `SPIE` 字段写入 trap 时 `SIE` 字段的值；`mstatus` 的 `SIE` 字段被清除。`mcause`、`mepc` 和 `mtval` 寄存器以及 `mstatus` 的 `MPP` 和 `MPIE` 字段没有写入。
 
-实现可以选择对可委托 Trap 进行子集化，通过向每个位位置写入 1 找到支持的可委托位，然后读回 `medeleg` 或 `mideleg` 中的值以查看哪些位位置为 1。
+实现可以选择对可委托 Trap 进行子集化，通过向每个位位置写入 `1` 找到支持的可委托位，然后读回 `medeleg` 或 `mideleg` 中的值以查看哪些位位置为 1。
 
 一个实现不应有任何 `medeleg` 位是只读的，即，任何可以委托的同步 Trap 必须支持不被委托。类似地，一个实现不应将对应于机器级中断的 `mideleg` 的任何位固定为只读（但可以为较低级别的中断这样做）。
 
