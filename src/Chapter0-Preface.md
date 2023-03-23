@@ -1,6 +1,6 @@
 ---
 title: "The RISC-V Instruction Set Manual"
-subtitle: "RISC-V 指令集手册中文版"
+subtitle: "Volume II: Privileged Architecture"
 version: "Vsersion: 20211203"
 date: "2022-10"
 company: RISC-V
